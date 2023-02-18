@@ -1,0 +1,113 @@
+{
+  "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+  "name": "DingTalk Connector",
+  "id": "io.camunda.connectors.DingTalk.v1",
+  "description": "Send message to DingTalk",
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "elementType": {
+    "value": "bpmn:ServiceTask"
+  },
+  "category": {
+    "id": "connectors",
+    "name": "Connectors"
+  },
+  "groups": [
+    {
+      "id": "authentication",
+      "label": "Authentication"
+    },
+    {
+      "id": "input",
+      "label": "Input message data"
+    }
+  ],
+  "properties": [
+    {
+      "type": "Hidden",
+      "value": "io.camunda:dingtalk-robot:1",
+      "binding": {
+        "type": "zeebe:taskDefinition:type"
+      }
+    },
+    {
+      "label": "Access Token",
+      "group": "authentication",
+      "type": "String",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "authentication.accessToken"
+      },
+      "feel": "optional",
+      "optional": true
+    },
+    {
+      "label": "Secret Token",
+      "group": "authentication",
+      "type": "String",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "authentication.secretToken"
+      },
+      "feel": "optional",
+      "optional": true
+    },
+    {
+      "id": "messageType",
+      "group": "input",
+      "label": "Message Type",
+      "description": "Send Message Type",
+      "type": "Dropdown",
+      "value": "TEXT",
+      "choices": [
+        {
+          "name": "Text Message",
+          "value": "TEXT"
+        },
+        {
+          "name": "Markdown Message",
+          "value": "MARKDOWN"
+        }
+      ],
+      "binding": {
+        "type": "zeebe:input",
+        "name": "messageType"
+      },
+      "constraints": {
+        "notEmpty": true
+      }
+    },
+    {
+      "id": "title",
+      "group": "input",
+      "label": "Message Title",
+      "type": "String",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "title"
+      },
+      "constraints": {
+        "notEmpty": true
+      },
+      "condition": {
+        "property": "messageType",
+        "equals": "MARKDOWN"
+      }
+    },
+    {
+      "id": "content",
+      "group": "input",
+      "label": "Message Content",
+      "type": "Text",
+      "binding": {
+        "type": "zeebe:input",
+        "name": "content"
+      },
+      "feel": "optional"
+    }
+  ],
+  "icon": {
+    "contents": "data:image/svg+xml;base64,PHN2ZyB0PSIxNjc2NzMwMDEyMjExIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjkzNiIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiPjxwYXRoIGQ9Ik01NzMuNyAyNTIuNUM0MjIuNSAxOTcuNCAyMDEuMyA5Ni43IDIwMS4zIDk2LjdjLTE1LjctNC4xLTE3LjkgMTEuMS0xNy45IDExLjEtNSA2MS4xIDMzLjYgMTYwLjUgNTMuNiAxODIuOCAxOS45IDIyLjMgMzE5LjEgMTEzLjcgMzE5LjEgMTEzLjdTMzI2IDM1Ny45IDI3MC41IDM0MS45Yy01NS42LTE2LTM3LjkgMTcuOC0zNy45IDE3LjggMTEuNCA2MS43IDY0LjkgMTMxLjggMTA3LjIgMTM4LjQgNDIuMiA2LjYgMjIwLjEgNCAyMjAuMSA0cy0zNS41IDQuMS05My4yIDExLjljLTQyLjcgNS44LTk3IDEyLjUtMTExLjEgMTcuOC0zMy4xIDEyLjUgMjQgNjIuNiAyNCA2Mi42IDg0LjcgNzYuOCAxMjkuNyA1MC41IDEyOS43IDUwLjUgMzMuMy0xMC43IDYxLjQtMTguNSA4NS4yLTI0LjJMNTY1IDc0My4xaDg0LjZMNjAzIDkyOGwyMDUuMy0yNzEuOUg3MDAuOGwyMi4zLTM4LjdjMC4zIDAuNSAwLjQgMC44IDAuNCAwLjhTNzk5LjggNDk2LjEgODI5IDQzMy44bDAuNi0xaC0wLjFjNS0xMC44IDguNi0xOS43IDEwLTI1LjggMTctNzEuMy0xMTQuNS05OS40LTI2NS44LTE1NC41eiIgZmlsbD0iIzEyOTZEQiIgcC1pZD0iOTM3Ij48L3BhdGg+PC9zdmc+"
+  }
+}
