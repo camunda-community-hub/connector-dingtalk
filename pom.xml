@@ -32,7 +32,7 @@ under one or more contributor license agreements. Licensed under a proprietary l
 See the License.txt file for more information. You may not use this file
 except in compliance with the proprietary license.</license.inlineheader>
     <plugin.version.googlejavaformat>1.25.2</plugin.version.googlejavaformat>
-    <plugin.version.spotless>2.44.1</plugin.version.spotless>
+    <plugin.version.spotless>2.44.2</plugin.version.spotless>
     <skipChecks>false</skipChecks>
     <version.google-libraries-bom>26.52.0</version.google-libraries-bom>
     <version.gson-extras>1.1.0</version.gson-extras>
