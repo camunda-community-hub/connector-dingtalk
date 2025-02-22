@@ -34,7 +34,7 @@ except in compliance with the proprietary license.</license.inlineheader>
     <plugin.version.googlejavaformat>1.25.2</plugin.version.googlejavaformat>
     <plugin.version.spotless>2.44.3</plugin.version.spotless>
     <skipChecks>false</skipChecks>
-    <version.google-libraries-bom>26.54.0</version.google-libraries-bom>
+    <version.google-libraries-bom>26.55.0</version.google-libraries-bom>
     <version.gson-extras>1.1.0</version.gson-extras>
     <version.httpcore>4.4.16</version.httpcore>
   </properties>
