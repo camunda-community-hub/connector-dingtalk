@@ -31,7 +31,7 @@
 under one or more contributor license agreements. Licensed under a proprietary license.
 See the License.txt file for more information. You may not use this file
 except in compliance with the proprietary license.</license.inlineheader>
-    <plugin.version.googlejavaformat>1.33.0</plugin.version.googlejavaformat>
+    <plugin.version.googlejavaformat>1.34.1</plugin.version.googlejavaformat>
     <plugin.version.spotless>2.46.1</plugin.version.spotless>
     <skipChecks>false</skipChecks>
     <version.google-libraries-bom>26.75.0</version.google-libraries-bom>
